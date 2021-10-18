@@ -12,4 +12,11 @@ class Estudante {
     {
         return "PHP Orientado a Objetos";
     }
+
+    public function atualizaIRA($nota)
+    {
+        $this->ira += $nota;
+
+        return $this->ira;
+    }
 } 

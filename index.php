@@ -12,5 +12,15 @@
         echo $disciplinas;
         ?>
 
+        <br><hr>
+
+        <?php
+        $ira = $estudante->atualizaIRA(9);
+        echo "Novo IRA {$ira} <br>";
+
+        $ira = $estudante->atualizaIRA(9);
+        echo "Novo IRA {$ira} <br>";
+        ?>
+
     </body>
 </html>
