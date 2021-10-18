@@ -13,7 +13,8 @@ ini_set('display_errors', 1);
         <?php
         require './Pessoa.php';
         require './Estudante.php';
-        $estudante = new Estudante();
+        // quando instancia a classe é necessário passar o nome, telefone e email, já que o método construtor da classe mãe pede estes dados.
+        $estudante = new Estudante('maria', '99999999', 'maia@maria.com');
         $disciplinas = $estudante->disciplinasMatriculadas();
         echo $disciplinas;
         ?>
@@ -37,6 +38,8 @@ ini_set('display_errors', 1);
         foreach ($dadosEstudante as $key => $value) {
             echo "{$key}: {$value} <br>";
         }
+
+        $estudante->inserirDados();
         ?>
 
     </body>
