@@ -1,11 +1,13 @@
 <?php
 
 /* 
-Método construtor: é executado no momento em que a classe é instanciada.
-Sintaxe: __construct
+Classe abstrata:
+Uma classe que não pode ser instanciada.
+Ela existe apenas para servir de herança para as classes “filhas”
+Sintaxe: abstract class <nome da classe>
 */
 
-class Pessoa
+abstract class Pessoa
 {
     public string $nome;
     public string $telefone;

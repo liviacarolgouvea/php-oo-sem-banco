@@ -13,6 +13,7 @@ ini_set('display_errors', 1);
         <?php
         require './Pessoa.php';
         require './Estudante.php';
+        require './Professor.php';
         // quando instancia a classe é necessário passar o nome, telefone e email, já que o método construtor da classe mãe pede estes dados.
         $estudante = new Estudante('maria', '99999999', 'maia@maria.com');
         $disciplinas = $estudante->disciplinasMatriculadas();
@@ -40,6 +41,13 @@ ini_set('display_errors', 1);
         }
 
         $estudante->inserirDados();
+        ?>
+
+        <br><hr>
+
+        <?php
+        $professor = new Professor('josé', '88888', 'jose@jose');
+        $professor->criarProfessor('PHP OO','4.000');
         ?>
 
     </body>
