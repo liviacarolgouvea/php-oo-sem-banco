@@ -50,5 +50,10 @@ ini_set('display_errors', 1);
         $professor->criarProfessor('PHP OO','4.000');
         ?>
 
+        <?php
+        echo 'Avalicação professor: '. $professor->calculaAvaliacao() . '<br>';
+        echo 'Avalicação estudante: '. $estudante->calculaAvaliacao();
+        ?>
+
     </body>
 </html>

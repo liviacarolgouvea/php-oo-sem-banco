@@ -31,4 +31,11 @@ class Professor extends Pessoa
         $json = json_encode($json, JSON_PRETTY_PRINT);
         file_put_contents('professores.json', $json);
     }
+
+    public function calculaAvaliacao(){
+        $qtdDisciplinasMinistradas = 100;
+        $qtdAnosNaInstituicao = 12;
+        $resultado = $qtdDisciplinasMinistradas * $qtdAnosNaInstituicao;
+        return $resultado;
+    }
 } 

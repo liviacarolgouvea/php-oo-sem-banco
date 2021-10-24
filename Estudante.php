@@ -31,4 +31,11 @@ class Estudante extends Pessoa{
 
         return $dados;
     }
+
+    public function calculaAvaliacao(){
+        $ira = 50;
+        $porcentagePresenca = 80;
+        $resultado = $ira * $porcentagePresenca;
+        return $resultado;
+    }
 } 

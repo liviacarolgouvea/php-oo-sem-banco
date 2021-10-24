@@ -1,10 +1,10 @@
 <?php
 
 /* 
-Classe abstrata:
-Uma classe que não pode ser instanciada.
-Ela existe apenas para servir de herança para as classes “filhas”
-Sintaxe: abstract class <nome da classe>
+Método abstrato:
+-Só pode ser definido em uma classe abstrata
+-Não possui código. O código do método é desenvolvido nas classes filhas.
+-As classes filhas são obrigadas a definir o método abstrato da classe mãe.
 */
 
 abstract class Pessoa
@@ -35,4 +35,6 @@ abstract class Pessoa
         $json = json_encode($json, JSON_PRETTY_PRINT);
         file_put_contents('pessoas.json', $json);
     }
+
+    abstract function calculaAvaliacao();
 } 
