@@ -12,12 +12,11 @@ abstract class Pessoa
     public string $nome;
     public string $telefone;
     public string $email;
+    public string $tipo;
 
-    public function __construct($nome, $telefone, $email)
+    public function __construct($tipo)
     {
-        $this->nome = $nome;
-        $this->telefone = $telefone;
-        $this->email = $email;
+        $this->tipo = $tipo;
     }
 
     public function inserirDados(){
@@ -37,4 +36,9 @@ abstract class Pessoa
     }
 
     abstract function calculaAvaliacao();
+
+    public function verPessoa():array{
+        $professores = json_decode(file_get_contents("{$this->tipo}.json"));
+        return $professores;
+    }
 } 

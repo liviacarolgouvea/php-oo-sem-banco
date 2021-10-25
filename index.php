@@ -14,46 +14,18 @@ ini_set('display_errors', 1);
         require './Pessoa.php';
         require './Estudante.php';
         require './Professor.php';
-        // quando instancia a classe é necessário passar o nome, telefone e email, já que o método construtor da classe mãe pede estes dados.
-        $estudante = new Estudante('maria', '99999999', 'maia@maria.com');
-        $disciplinas = $estudante->disciplinasMatriculadas();
-        echo $disciplinas;
+        $professor = new Professor('professores');
         ?>
 
-        <br><hr>
-
+        <h2>Professores</h2>
         <?php
-        $ira = $estudante->atualizaIRA(9);
-        echo "Novo IRA {$ira} <br>";
-
-        $ira = $estudante->atualizaIRA(9);
-        echo "Novo IRA {$ira} <br>";
-        ?>
-
-        <br><hr>
-
-        <?php
-        $estudante->nome = 'Maria';
-        $estudante->matricula = '9999999';
-        $dadosEstudante = $estudante->verEstudante();
-        foreach ($dadosEstudante as $key => $value) {
-            echo "{$key}: {$value} <br>";
+        $professores = $professor->verPessoa('professores');
+        foreach ($professores as $key => $object) {
+            foreach ($object as $key => $value) {
+                echo "<b>{$key}:</b> {$value} <br>";
+            }
+            echo '<br><hr>';
         }
-
-        $estudante->inserirDados();
         ?>
-
-        <br><hr>
-
-        <?php
-        $professor = new Professor('josé', '88888', 'jose@jose');
-        $professor->criarProfessor('PHP OO','4.000');
-        ?>
-
-        <?php
-        echo 'Avalicação professor: '. $professor->calculaAvaliacao() . '<br>';
-        echo 'Avalicação estudante: '. $estudante->calculaAvaliacao();
-        ?>
-
     </body>
 </html>
