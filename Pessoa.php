@@ -1,11 +1,11 @@
 <?php
 
 /* 
-Classe final:
-Uma classe com prefixo final não pode ser estendida.
+Método final:
+Um método com prefixo final não pode ser sobrescrito.
 */
 
-final class Pessoa
+abstract class Pessoa
 {
     public string $nome;
     public string $telefone;
@@ -31,6 +31,10 @@ final class Pessoa
 
         $json = json_encode($json, JSON_PRETTY_PRINT);
         file_put_contents('pessoas.json', $json);
+    }
+
+    final function calculaAvaliacao(){
+        return true;
     }
 
     public function verPessoa():array{
