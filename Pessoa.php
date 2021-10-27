@@ -41,4 +41,22 @@ abstract class Pessoa
         $professores = json_decode(file_get_contents("{$this->tipo}.json"));
         return $professores;
     }
+
+    public function excluirPessoa($key){
+        $pessoas = json_decode(file_get_contents("pessoas.json"));
+        foreach($pessoas as $keys){
+            unset($pessoas[$key]);
+        }
+        $json = json_encode(array_values($pessoas), JSON_PRETTY_PRINT);
+        file_put_contents("pessoas.json", $json);
+
+        $pessoas = json_decode(file_get_contents("{$this->tipo}.json"));
+        foreach($pessoas as $keys){
+            unset($pessoas[$key]);
+        }
+        $json = json_encode(array_values($pessoas), JSON_PRETTY_PRINT);
+        file_put_contents("{$this->tipo}.json", $json);
+
+        return true;
+    }
 } 

@@ -21,10 +21,10 @@ ini_set('display_errors', 1);
         <?php
         $professores = $professor->verPessoa('professores');
         foreach ($professores as $key => $object) {
-            foreach ($object as $key => $value) {
-                echo "<b>{$key}:</b> {$value} <br>";
+            foreach ($object as $lable => $value) {
+                echo "<b>{$lable}:</b> {$value} <br>";
             }
-            echo '<br><hr>';
+            echo "<a href='excluirProfessor.php?key={$key}'>Excluir</a><br> <br><hr>";
         }
         ?>
     </body>
