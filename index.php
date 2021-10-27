@@ -18,6 +18,7 @@ ini_set('display_errors', 1);
         ?>
 
         <h2>Professores</h2>
+        <p><a href='cadastrarProfessor.php'>Cadastrar</a></p>
         <?php
         $professores = $professor->verPessoa('professores');
         foreach ($professores as $key => $object) {

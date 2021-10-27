@@ -19,14 +19,14 @@ abstract class Pessoa
         $this->tipo = $tipo;
     }
 
-    public function inserirDados(){
+    public function inserirDados(array $pessoa){
         $data = file_get_contents('pessoas.json');
         $json = json_decode($data);
 
         $array = array(
-            'nome' => $this->nome,
-            'telefone' => $this->telefone,
-            'email' => $this->email
+            'nome' => $pessoa['nome'],
+            'telefone' => $pessoa['telefone'],
+            'email' => $pessoa['email']
         );
 
         $json[] = $array;
