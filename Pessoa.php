@@ -1,5 +1,10 @@
 <?php
 
+/*
+Visibilidade de membro: protected
+Membros declarados como protegidos só podem ser acessados dentro da classe declarante e dentro de suas classes herdeiras.
+*/
+
 abstract class Pessoa
 {
     public string $nome;
@@ -30,7 +35,7 @@ abstract class Pessoa
 
     abstract function calculaAvaliacao();
 
-    public function verPessoa():array{
+    protected function verPessoa():array{
         $professores = json_decode(file_get_contents("{$this->tipo}.json"));
         return $professores;
     }
