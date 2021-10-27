@@ -36,7 +36,7 @@ ini_set('display_errors', 1);
         <?php
         $disciplinaMatematica = new Disciplina();
         $disciplinaMatematica->nome = 'Matemática';
-        $disciplinaMatematica->codigo = 'MAT';
+        $disciplinaMatematica->setCodigo('MAT1');
         $disciplinaMatematica->creditos = 4;
         Disciplina::ministrarDisciplina();
         $matematica = $disciplinaMatematica->verDisciplina();
@@ -47,7 +47,7 @@ ini_set('display_errors', 1);
         <?php
         $disciplinaPortugues = new Disciplina();
         $disciplinaPortugues->nome = 'Português';
-        $disciplinaPortugues->codigo = 'PORT';
+        $disciplinaPortugues->setCodigo('PORT');
         $disciplinaPortugues->creditos = 4;
         Disciplina::ministrarDisciplina();
         echo $disciplinaPortugues->verDisciplina();
