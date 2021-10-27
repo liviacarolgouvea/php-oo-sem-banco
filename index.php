@@ -14,6 +14,7 @@ ini_set('display_errors', 1);
         require './Pessoa.php';
         require './Estudante.php';
         require './Professor.php';
+        require './Disciplina.php';
         $professor = new Professor('professores');
         ?>
 
@@ -28,5 +29,29 @@ ini_set('display_errors', 1);
             echo "<a href='excluirProfessor.php?key={$key}'>Excluir</a><br> <br><hr>";
         }
         ?>
+
+        <br><hr><br>
+
+        <h2>Disciplinas</h2>
+        <?php
+        $disciplinaMatematica = new Disciplina();
+        $disciplinaMatematica->nome = 'Matemática';
+        $disciplinaMatematica->codigo = 'MAT';
+        $disciplinaMatematica->creditos = 4;
+        Disciplina::ministrarDisciplina();
+        $matematica = $disciplinaMatematica->verDisciplina();
+        echo $matematica.PHP_EOL;?>
+
+        <br>
+
+        <?php
+        $disciplinaPortugues = new Disciplina();
+        $disciplinaPortugues->nome = 'Português';
+        $disciplinaPortugues->codigo = 'PORT';
+        $disciplinaPortugues->creditos = 4;
+        Disciplina::ministrarDisciplina();
+        echo $disciplinaPortugues->verDisciplina();
+        ?>
+
     </body>
 </html>

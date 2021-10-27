@@ -1,10 +1,5 @@
 <?php
 
-/* 
-Método final:
-Um método com prefixo final não pode ser sobrescrito.
-*/
-
 abstract class Pessoa
 {
     public string $nome;
@@ -33,9 +28,7 @@ abstract class Pessoa
         file_put_contents('pessoas.json', $json);
     }
 
-    final function calculaAvaliacao(){
-        return true;
-    }
+    abstract function calculaAvaliacao();
 
     public function verPessoa():array{
         $professores = json_decode(file_get_contents("{$this->tipo}.json"));
