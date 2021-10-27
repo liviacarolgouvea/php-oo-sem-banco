@@ -1,13 +1,11 @@
 <?php
 
 /* 
-Método abstrato:
--Só pode ser definido em uma classe abstrata
--Não possui código. O código do método é desenvolvido nas classes filhas.
--As classes filhas são obrigadas a definir o método abstrato da classe mãe.
+Classe final:
+Uma classe com prefixo final não pode ser estendida.
 */
 
-abstract class Pessoa
+final class Pessoa
 {
     public string $nome;
     public string $telefone;
@@ -34,8 +32,6 @@ abstract class Pessoa
         $json = json_encode($json, JSON_PRETTY_PRINT);
         file_put_contents('pessoas.json', $json);
     }
-
-    abstract function calculaAvaliacao();
 
     public function verPessoa():array{
         $professores = json_decode(file_get_contents("{$this->tipo}.json"));
